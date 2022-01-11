@@ -1,0 +1,13 @@
+apiversion: v1
+kind: service
+metadata:
+   name: myjenkins-srvc
+   labels: myjenkins-pod
+spec:  
+  type: nodeport
+  ports:
+  - port: 8080
+    nodeport: 30001
+    protocol: TCP
+  selector:
+     app: myjenkins-pod
